@@ -1,0 +1,188 @@
+---
+title: 'Pessoas e medidas'
+subtitle: 'Lista avaliativa -- Probabilidade e Estatística -- 2022.1'
+author: 'fnaufel'
+email: 'https://fnaufel.github.io/'
+date: '   (v. `r format(Sys.Date(), "%d/%m/%Y")`)'
+lang: 'pt-br'
+
+output: 
+  # To install these output formats, run
+  #   install.packages("devtools")
+  #   devtools::install_github("fnaufel/fnaufelRmd")
+  fnaufelRmd::html_report:
+    []
+---
+
+```{r setup, include=FALSE}
+# The next command configures MANY things and loads quite a few packages.
+# 
+# If you want to see what's being done, execute 
+# 
+#   cat(
+#     system.file(
+#       "rmarkdown/resources/R/_common_report.R", 
+#       package = "fnaufelRmd"
+#     )
+#   )
+# 
+# to find out the location of the file. Then open the file.
+# 
+# If you want to change the configuration, copy the file, edit it, and
+# source it instead of the package file. 
+# 
+# Or simply write your commands here in this code chunk.
+
+source(
+  system.file(
+    "rmarkdown/resources/R/_common_report.R",
+    package = "fnaufelRmd"
+  )
+)
+```
+
+
+# Instruções {-}
+
+## Fase de coleta de dados e amostragem {-}
+
+* Siga cuidadosamente as instruções em [*coleta de dados*](#coleta) e envie os arquivos `.csv` em uma [mensagem privada]{.hl} para o professor, via Telegram, [no prazo especificado no Moodle]{.hl}.
+
+* Aguarde que o professor envie a você os arquivos `.csv` com os dados que você vai usar na resolução das [questões](#questoes).
+
+
+## Fase de resolução {-}
+
+* Clique o botão `Code`, no início desta página, para baixar o arquivo Rmd deste documento.
+
+* Edite o arquivo Rmd para resolver as questões [com os dados atribuídos a você]{.hl}. 
+
+* Escreva o máximo possível sobre o seu raciocínio. Justifique suas respostas.
+
+* Teste suas respostas. Tudo deve estar executando sem erros.
+
+* [Envie no Moodle: ]{.hl}
+
+  1. O arquivo Rmd com as suas resoluções e
+  
+  1. Um vídeo de até $5$ minutos explicando as suas resoluções.
+
+* Bom trabalho.
+
+
+# Ambiente {-}
+
+* Para gerar um arquivo HTML a partir deste documento, você precisa dos seguintes pacotes do R:
+
+  ```{r echo=FALSE, results='asis'}
+  pacotes <- session_info('attached')$packages$package
+  pacotes_tidy <- getNamespace("tidyverse")$core
+  pacotes <- c(
+    setdiff(pacotes, pacotes_tidy),
+    'fnaufelRmd',
+    'devtools'
+  ) %>% 
+    sort()
+   
+  paste('  * `', pacotes, '`', collapse = '\n\n') %>% 
+    cat()
+  ```
+
+* Execute o seguinte código para instalar os pacotes que estão faltando no seu ambiente:
+
+    ```{r message=FALSE}
+    if (!require('devtools'))
+      install.packages('devtools')
+    
+    if (!require('fnaufelRmd'))
+      devtools::install_github("fnaufel/fnaufelRmd")
+    
+    pacotes <- c(
+      'conflicted',
+      'kableExtra',
+      'knitr',
+      'latex2exp',
+      'sessioninfo',
+      'summarytools',
+      'tidyverse'
+    )
+    
+    instalar_se_preciso <- function(x) {
+      
+      if (!require(x, character.only = TRUE))
+        install.packages(x)
+      
+    }
+    
+    invisible(sapply(pacotes, instalar_se_preciso))
+    ```
+
+* Se houver erro na instalação, entre em contato comigo pelo Telegram, [enviando todas as mensagens emitidas quando você executou os comandos]{.hl}.
+
+
+# Coleta de dados {#coleta}
+
+## Sinistrismo {#sinistrismo}
+
+1. [Escolha $5$ pessoas]{.hl} dentre seus familiares e seus amigos. 
+
+   [Dê preferência a pessoas que não frequentam o PURO]{.hl}, para evitar repetição de dados com as amostras dos seus colegas de turma.
+
+1. [Peça a cada uma das pessoas]{.hl} para preencher o questionário abaixo.
+
+1. [Preencha você também]{.hl} o questionário abaixo com as suas respostas.
+
+   ::: {.rmdbox latex=1}
+   
+   #### **QUESTIONÁRIO SOBRE PREFERÊNCIA DE MÃO** {-}
+   
+   Por favor, indique qual mão você usaria para cada atividade abaixo, do seguinte modo:
+   
+   * Se você usaria *preferencialmente* uma das mãos, mas poderia usar --- ou ocasionalmente usa --- a outra mão, com resultados inferiores, então coloque "`+`" (um sinal de mais) na coluna da mão preferida.
+     
+   * Se você *sempre* usaria uma das mãos, e nunca a outra, então coloque "`+ +`" (*dois* sinais de mais) na coluna da mão usada.
+     
+   * Se você for *indiferente* quanto à mão usada, então coloque um "`+`" (sinal de mais) *em cada coluna*.
+     
+   $$
+    \begin{array}{|l|c|c|}
+      \texttt{ATIVIDADE} & \texttt{ESQUERDA} & \texttt{DIREITA} 
+      \\ \hline
+      \texttt{Escrever} &  &  \\\hline
+      \texttt{Desenhar} &  &  \\\hline
+      \texttt{Arremessar uma pedra} &  &  \\\hline
+      \texttt{Cortar papel com uma tesoura} &  &  \\\hline
+      \texttt{Escovar os dentes (com escova manual)} &  &  \\\hline
+      \texttt{Passar manteiga no pão com uma faca} &  &  \\\hline
+      \texttt{Tomar sopa com uma colher} &  &  \\\hline
+      \texttt{Varrer o chão (mão na parte de cima da vassoura)} &  &  \\\hline
+      \texttt{Riscar um fósforo (mão que segura o fósforo)} &  &  \\\hline
+      \texttt{Abrir uma caixa de sapatos (mão que segura a tampa)} &  &  \\\hline
+    \end{array}
+   $$
+     
+   :::
+   
+1. [Gere o arquivo `sinistrismo.csv`]{.hl} com os resultados. 
+
+   O arquivo terá $6$ linhas e [duas colunas]{.hl}:
+
+   * `sexo`: `M` ou `F`.
+   
+   * `nota`: um valor de ponto flutuante entre $-1$ e $1$ (inclusive) [com $3$ casas decimais]{.hl}, calculado para cada pessoa do seguinte modo:
+   
+     * $E = {}$ quantidade de `+` na coluna `Esquerda` da ficha preenchida pela pessoa.
+     
+     * $D = {}$ quantidade de `+` na coluna `Direita` da ficha preenchida pela pessoa.
+     
+     * `nota` $\displaystyle {}= \frac{E - D}{E + D}$
+   
+   
+## Razão altura-mão {#alturamao}
+
+
+## Peso {#pesos}
+
+
+# Questões {#questoes}
+
