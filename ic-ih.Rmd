@@ -117,7 +117,7 @@ source(
     invisible(sapply(pacotes, instalar_se_preciso))
     ```
 
-* Se houver erro na instalação, entre em contato comigo pelo Telegram, [enviando todas as mensagens emitidas quando você executou os comandos]{.hl}.
+* Se houver erro na instalação, entre em contato com o professor pelo Telegram, [enviando todas as mensagens emitidas quando você executou os comandos]{.hl}.
 
 
 # Coleta de dados {#coleta}
@@ -125,8 +125,6 @@ source(
 ## Sinistrismo {#sinistrismo}
 
 1. [Escolha $5$ pessoas]{.hl} dentre seus familiares e seus amigos. 
-
-   [Dê preferência a pessoas que não frequentam o PURO]{.hl}, para evitar repetição de dados com as amostras dos seus colegas de turma.
 
 1. [Peça a cada uma das pessoas]{.hl} para preencher o questionário abaixo.
 
@@ -176,13 +174,61 @@ source(
      * $D = {}$ quantidade de `+` na coluna `Direita` da ficha preenchida pela pessoa.
      
      * `nota` $\displaystyle {}= \frac{E - D}{E + D}$
+
+1. Envie o arquivo [em mensagem privada]{.hl} para o professor, via Telegram.
    
    
 ## Razão altura-mão {#alturamao}
 
+1. [Escolha $5$ pessoas]{.hl} dentre seus familiares e seus amigos. 
+
+1. [Registre]{.hl}, para cada pessoa,
+
+   * O [sexo]{.hl},
+   
+   * A [altura em centímetros]{.hl}, com $1$ casa decimal,
+   
+   * A [distância, em centímetros]{.hl}, com $1$ casa decimal, [entre a ponta do dedo mínimo e a ponta do polegar]{.hl} (ambos da mão esquerda), com a mão mais aberta possível --- como se a pessoa fosse tocar, ao mesmo tempo, só com a mão esquerda, duas teclas muito afastadas de um piano.
+
+1. [Registre]{.hl} os mesmos dados [para você mesmo]{.hl}.
+
+1. [Gere o arquivo `razao.csv`]{.hl} com os resultados. 
+
+   O arquivo terá $6$ linhas e [$4$ colunas]{.hl}:
+
+   * `sexo`: `M` ou `F`.
+   
+   * `altura`: um valor de ponto flutuante [com $1$ casa decimal]{.hl}.
+   
+   * `mao`: um valor de ponto flutuante [com $1$ casa decimal]{.hl}.
+   
+   * `razao`: um valor de ponto flutuante [com $1$ casa decimal]{.hl}, com a razão $\displaystyle \frac{\texttt{altura}}{\texttt{mao}}$.
+
+1. Envie o arquivo [em mensagem privada]{.hl} para o professor, via Telegram.
+   
 
 ## Peso {#pesos}
 
+1. [Escolha $5$ pessoas]{.hl} dentre seus familiares e seus amigos. 
+
+1. [Registre]{.hl}, para cada pessoa,
+
+   * O [sexo]{.hl},
+   
+   * O [peso em quilogramas]{.hl}, com $3$ casas decimais.
+   
+1. [Registre]{.hl} os mesmos dados [para você mesmo]{.hl}.
+
+1. [Gere o arquivo `peso.csv`]{.hl} com os resultados. 
+
+   O arquivo terá $6$ linhas e [$2$ colunas]{.hl}:
+
+   * `sexo`: `M` ou `F`.
+   
+   * `peso`: um valor de ponto flutuante [com $3$ casas decimais]{.hl}.
+   
+1. Envie o arquivo [em mensagem privada]{.hl} para o professor, via Telegram.
+   
 
 # Questões {#questoes}
 
