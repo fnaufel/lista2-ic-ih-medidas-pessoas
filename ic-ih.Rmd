@@ -46,12 +46,12 @@ source(
 
 ## Fase de coleta de dados e amostragem {-}
 
-* Siga cuidadosamente as instruções em [*coleta de dados*](#coleta) e envie os arquivos `.csv` em uma [mensagem privada]{.hl} para o professor, via Telegram, [no prazo especificado no Moodle]{.hl}.
-
-* Aguarde que o professor envie a você os arquivos `.csv` com os dados que você vai usar na resolução das [questões](#questoes).
+* Siga cuidadosamente as instruções em [*coleta de dados*](#coleta) e envie os arquivos `.csv` [no Moodle]{.hl}.
 
 
 ## Fase de resolução {-}
+
+* Aguarde que o professor envie a você os arquivos `.csv` com os dados que você vai usar na resolução das [questões](#questoes).
 
 * Clique o botão `Code`, no início desta página, para baixar o arquivo Rmd deste documento.
 
@@ -171,7 +171,7 @@ source(
      
      * `nota` $\displaystyle {}= \frac{E - D}{E + D}$
 
-1. Envie o arquivo [em mensagem privada]{.hl} para o professor, via Telegram.
+1. Envie o arquivo [no Moodle]{.hl}.
    
    
 ## Razão altura-mão {#alturamao}
@@ -200,7 +200,7 @@ source(
    
    * `razao`: um valor de ponto flutuante [com $1$ casa decimal]{.hl}, com a razão $\displaystyle \frac{\texttt{altura}}{\texttt{mao}}$.
 
-1. Envie o arquivo [em mensagem privada]{.hl} para o professor, via Telegram.
+1. Envie o arquivo [no Moodle]{.hl}.
    
 
 # Questões {#questoes}
