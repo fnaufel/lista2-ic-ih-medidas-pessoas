@@ -141,37 +141,33 @@ source(
    * Se você *sempre* usaria uma das mãos, e nunca a outra, então coloque "`+ +`" (*dois* sinais de mais) na coluna da mão usada.
      
    * Se você for *indiferente* quanto à mão usada, então coloque um "`+`" (sinal de mais) *em cada coluna*.
-     
-   $$
-    \begin{array}{|l|c|c|}
-      \texttt{ATIVIDADE} & \texttt{ESQUERDA} & \texttt{DIREITA} 
-      \\ \hline
-      \texttt{Escrever} &  &  \\\hline
-      \texttt{Desenhar} &  &  \\\hline
-      \texttt{Arremessar uma pedra} &  &  \\\hline
-      \texttt{Cortar papel com uma tesoura} &  &  \\\hline
-      \texttt{Escovar os dentes (com escova manual)} &  &  \\\hline
-      \texttt{Passar manteiga no pão com uma faca} &  &  \\\hline
-      \texttt{Tomar sopa com uma colher} &  &  \\\hline
-      \texttt{Varrer o chão (mão na parte de cima da vassoura)} &  &  \\\hline
-      \texttt{Riscar um fósforo (mão que segura o fósforo)} &  &  \\\hline
-      \texttt{Abrir uma caixa de sapatos (mão que segura a tampa)} &  &  \\\hline
-    \end{array}
-   $$
-     
+
+    | ATIVIDADE                                           | ESQUERDA | DIREITA |
+    |-----------------------------------------------------+----------+---------|
+    | Escrever                                            |          |         |
+    | Desenhar                                            |          |         |
+    | Arremessar uma pedra                                |          |         |
+    | Cortar papel com uma tesoura                        |          |         |
+    | Escovar os dentes (com escova manual)               |          |         |
+    | Passar manteiga no pão com uma faca                 |          |         |
+    | Tomar sopa com uma colher                           |          |         |
+    | Varrer o chão (mão na parte de cima da vassoura)    |          |         |
+    | Riscar um fósforo (mão que segura o fósforo)        |          |         |
+    | Abrir uma caixa de sapatos (mão que segura a tampa) |          |         |
+
    :::
    
 1. [Gere o arquivo `sinistrismo.csv`]{.hl} com os resultados. 
 
-   O arquivo terá $6$ linhas e [duas colunas]{.hl}:
+   O arquivo terá $7$ linhas (a primeira delas contendo os nomes das colunas) e [duas colunas]{.hl}:
 
    * `sexo`: `M` ou `F`.
    
    * `nota`: um valor de ponto flutuante entre $-1$ e $1$ (inclusive) [com $3$ casas decimais]{.hl}, calculado para cada pessoa do seguinte modo:
    
-     * $E = {}$ quantidade de `+` na coluna `Esquerda` da ficha preenchida pela pessoa.
+     * $E = {}$ quantidade de "`+`" na coluna `Esquerda` do questionário preenchido.
      
-     * $D = {}$ quantidade de `+` na coluna `Direita` da ficha preenchida pela pessoa.
+     * $D = {}$ quantidade de "`+`" na coluna `Direita` do questionário preenchido.
      
      * `nota` $\displaystyle {}= \frac{E - D}{E + D}$
 
@@ -188,13 +184,13 @@ source(
    
    * A [altura em centímetros]{.hl}, com $1$ casa decimal,
    
-   * A [distância, em centímetros]{.hl}, com $1$ casa decimal, [entre a ponta do dedo mínimo e a ponta do polegar]{.hl} (ambos da mão esquerda), com a mão mais aberta possível --- como se a pessoa fosse tocar, ao mesmo tempo, só com a mão esquerda, duas teclas muito afastadas de um piano.
+   * A [distância, em centímetros]{.hl}, com $1$ casa decimal, [entre a ponta do dedo mínimo e a ponta do polegar]{.hl} (ambos da mão esquerda), com a mão mais aberta possível --- como se a pessoa fosse tocar, ao mesmo tempo, só com a mão esquerda, duas teclas de um piano, uma muito afastada da outra.
 
 1. [Registre]{.hl} os mesmos dados [para você mesmo]{.hl}.
 
 1. [Gere o arquivo `razao.csv`]{.hl} com os resultados. 
 
-   O arquivo terá $6$ linhas e [$4$ colunas]{.hl}:
+   O arquivo terá $7$ linhas (a primeira delas contendo os nomes das colunas) e [$4$ colunas]{.hl}:
 
    * `sexo`: `M` ou `F`.
    
@@ -207,28 +203,57 @@ source(
 1. Envie o arquivo [em mensagem privada]{.hl} para o professor, via Telegram.
    
 
-## Peso {#pesos}
-
-1. [Escolha $5$ pessoas]{.hl} dentre seus familiares e seus amigos. 
-
-1. [Registre]{.hl}, para cada pessoa,
-
-   * O [sexo]{.hl},
-   
-   * O [peso em quilogramas]{.hl}, com $3$ casas decimais.
-   
-1. [Registre]{.hl} os mesmos dados [para você mesmo]{.hl}.
-
-1. [Gere o arquivo `peso.csv`]{.hl} com os resultados. 
-
-   O arquivo terá $6$ linhas e [$2$ colunas]{.hl}:
-
-   * `sexo`: `M` ou `F`.
-   
-   * `peso`: um valor de ponto flutuante [com $3$ casas decimais]{.hl}.
-   
-1. Envie o arquivo [em mensagem privada]{.hl} para o professor, via Telegram.
-   
-
 # Questões {#questoes}
 
+## Sinistrismo {#sinistrismoq}
+
+1. Leia o arquivo `sinistrismo-amostra.csv` que você recebeu, gerando uma *tibble*.
+
+1. Faça uma [breve análise exploratória]{.hl}:
+
+   a. Quantos elementos tem sua amostra?
+   
+   a. Quais as proporções de homens e mulheres?
+   
+   a. Quais as estatísticas [globais]{.hl} relativas a `nota`?
+   
+   a. Quais as estatísticas [por sexo]{.hl} relativas a `nota`?
+   
+   a. Faça [gráficos]{.hl} de `nota` (globais e por sexo). Escolha os tipos de gráfico mais adequados para a situação. Comente os resultados.
+   
+1. [Pesquise na internet]{.hl}: qual é a proporção de canhotos na população em geral?
+
+1. [Considere como canhota]{.hl} qualquer pessoa da sua amostra com `nota` ${}> 0{,}5$. 
+
+1. Construa um [intervalo de confiança]{.hl} para a proporção de canhotos na população, com base na sua amostra. Use nível de confiança de $95\%$.
+
+1. A proporção de canhotos na população em geral (que você pesquisou no item 3) está dentro do intervalo de confiança que você construiu? O que isto significa?
+
+1. Teste a seguinte [hipótese]{.hl}: a média das notas dos homens é igual à média das notas das mulheres. Use $\alpha = 0{,}05$. Comente o resultado.
+   
+
+## Razão altura-mão {#alturamaoq}
+
+1. Leia o arquivo `razao-amostra.csv` que você recebeu, gerando uma *tibble*.
+
+1. Faça uma [breve análise exploratória]{.hl}:
+
+   a. Quantos elementos tem sua amostra?
+   
+   a. Quais as proporções de homens e mulheres?
+   
+   a. Quais as estatísticas [globais]{.hl} relativas a `altura`, `mao`, e `razao`?
+   
+   a. Quais as estatísticas [por sexo]{.hl} relativas a `altura`, `mao`, e `razao`?
+   
+   a. Faça [gráficos]{.hl} de `altura`, `mao`, e `razao` (globais e por sexo). Escolha os tipos de gráfico mais adequados para a situação. Comente os resultados.
+
+1. Teste a seguinte [hipótese]{.hl}: `razao` é, em média, maior para os homens do que para as mulheres. Use $\alpha = 0{,}05$. Comente o resultado.
+
+1. Construa um [intervalo de confiança]{.hl} para a diferença das alturas médias entre homens e mulheres. Use nível de confiança de $95\%$.
+
+1. Qual é a [correlação]{.hl} entre `mao` e `altura`, sem levar em conta o sexo? 
+
+1. Qual é a [correlação]{.hl} entre `mao` e `altura`, levando em conta o sexo? 
+
+<div style='height: 200px'></div>
